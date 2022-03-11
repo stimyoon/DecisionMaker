@@ -12,69 +12,62 @@ struct Reason : Identifiable, Codable {
     var text = ""
     static var mockReason = Reason(text: "")
 }
-struct Choice : Identifiable, Codable {
+
+struct Question: Identifiable, Codable {
     var id : String? = UUID().uuidString
     var text = ""
-    var reasons : [Reason] = []
-    static var mockChoice = Choice(text: "yes")
 }
 
-
-
-struct HomeView: View {
-    @State private var choices : [Choice] = [
-        Choice(text: "Yes", reasons: [Reason(text: "Tastes Good"),
-                                      Reason(text: "Makes me happy")]),
-        Choice(text: "No", reasons: [])
-    ]
-    @State private var questionText = ""
-    @State private var newChoice = ""
-    @State private var yesReasonText = ""
-    var body: some View {
+struct HomeView : View {
+    @State private var question = Question(text: "Buy a car?")
+    @State private var yesReasons : [Reason] = [Reason(text: "Commuting")]
+    @State private var noReasons : [Reason] = [Reason(text: "Cost")]
+    @State private var yesTextFieldText = ""
+    @State private var noTextFieldText = ""
     
-        Form{
-            Section(header: Text("Question")) {
-                TextField("Enter Question", text: $questionText)
-                    .textFieldStyle(.roundedBorder)
-                
-            }
-            Section(header: Text("Choices")) {
-                ForEach(choices){ choice in
-                    DisclosureGroup("\(choice.text)") {
-                        ForEach(choice.reasons){ reason in
+    var body: some View {
+        NavigationView{
+            Form{
+                Section(header: Text("Question")) {
+                    TextField("Question", text: $question.text)
+
+                }
+                Section(header: Text("Answers")){
+                    DisclosureGroup("Yes") {
+                        ForEach(yesReasons){ reason in
                             Text(reason.text)
                         }
                         HStack{
-                            TextField("reasons", text: $yesReasonText)
-                                .textFieldStyle(.roundedBorder)
+                            TextField("Add a reason", text: $yesTextFieldText)
                             Button {
-                                choices[0].reasons.append(Reason(text: yesReasonText))
+                                yesReasons.append(Reason(text: yesTextFieldText))
                             } label: {
                                 Image(systemName: "plus.circle")
                             }
-
+                        }
+                    }
+                    DisclosureGroup("No") {
+                        ForEach(noReasons){ reason in
+                            Text(reason.text)
+                        }
+                        HStack{
+                            TextField("Add a reason", text: $yesTextFieldText)
+                            Button {
+                                noReasons.append(Reason(text: yesTextFieldText))
+                            } label: {
+                                Image(systemName: "plus.circle")
+                            }
                         }
                     }
                 }
-//                HStack {
-//                    TextField("New Choice", text: $newChoice)
-//                    Button {
-//                        choices.append(newChoice)
-//                    } label: {
-//                        Image(systemName: "plus.circle")
-//                    }
-//
-//                }
             }
+            .navigationTitle("Decision Maker")
         }
-        .navigationTitle("Decision Maker")
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView{
             HomeView()
-        }
     }
 }

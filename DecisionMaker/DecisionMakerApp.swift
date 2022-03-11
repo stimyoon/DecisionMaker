@@ -9,15 +9,10 @@ import SwiftUI
 
 @main
 struct DecisionMakerApp: App {
-    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            NavigationView{
-                HomeView()
-            }
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            HomeView()
         }
     }
 }
