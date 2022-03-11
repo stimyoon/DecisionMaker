@@ -16,6 +16,8 @@
 		91AA831D27DA78B600490A5F /* DecisionMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA831C27DA78B600490A5F /* DecisionMakerTests.swift */; };
 		91AA832727DA78B600490A5F /* DecisionMakerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA832627DA78B600490A5F /* DecisionMakerUITests.swift */; };
 		91AA832927DA78B600490A5F /* DecisionMakerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA832827DA78B600490A5F /* DecisionMakerUITestsLaunchTests.swift */; };
+		91AA833627DA78D000490A5F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA833527DA78D000490A5F /* HomeView.swift */; };
+		91AA833827DA7DAE00490A5F /* ChoiceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AA833727DA7DAE00490A5F /* ChoiceDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		91AA832227DA78B600490A5F /* DecisionMakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecisionMakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91AA832627DA78B600490A5F /* DecisionMakerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionMakerUITests.swift; sourceTree = "<group>"; };
 		91AA832827DA78B600490A5F /* DecisionMakerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionMakerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		91AA833527DA78D000490A5F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		91AA833727DA7DAE00490A5F /* ChoiceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				91AA830627DA78B600490A5F /* DecisionMakerApp.swift */,
+				91AA833527DA78D000490A5F /* HomeView.swift */,
+				91AA833727DA7DAE00490A5F /* ChoiceDetailView.swift */,
 				91AA830827DA78B600490A5F /* ContentView.swift */,
 				91AA830A27DA78B600490A5F /* Assets.xcassets */,
 				91AA830F27DA78B600490A5F /* Persistence.swift */,
@@ -265,7 +271,9 @@
 			files = (
 				91AA831327DA78B600490A5F /* DecisionMaker.xcdatamodeld in Sources */,
 				91AA831027DA78B600490A5F /* Persistence.swift in Sources */,
+				91AA833827DA7DAE00490A5F /* ChoiceDetailView.swift in Sources */,
 				91AA830927DA78B600490A5F /* ContentView.swift in Sources */,
+				91AA833627DA78D000490A5F /* HomeView.swift in Sources */,
 				91AA830727DA78B600490A5F /* DecisionMakerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
